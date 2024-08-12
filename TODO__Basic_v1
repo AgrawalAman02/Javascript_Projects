@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List using DOM (Basic)</title>
+</head>
+<body style="background: linear-gradient(to right, #e65c00, #f9d423);">
+    
+    <div class = "todo" style="border-style: dotted; border-color: black; border-radius: 1%; border-width: 10%; padding: 10%; margin: 20%; display:grid;  align-content: center; background-color: rgb(162, 231, 231);">
+        <h2>TO DO App For You! </h2>
+        <input type="text" id = "inputField"/>
+        <button class="btn" style="background-color: rgb(238, 227, 133);">Touch me to enter!</button>
+        <!-- we want to add data in the new div data so we are creating a new div here  -->
+        <div class="todoitems" style="background-color: rgb(190, 222, 94);">
+
+        </div>
+    </div>
+    
+    <script>
+        let inputfield = document.getElementById("inputField");
+        let clickbtn = document.querySelector(".btn");
+        let todoelem = document.querySelector(".todoitems");
+
+        clickbtn.addEventListener('click', ()=>{
+            addTodo();  // callback function
+        });
+
+        const addTodo = ()=> {
+            let pElem = document.createElement("p");
+            pElem.textContent = inputfield.value;
+            todoelem.append(pElem);
+            inputfield.value="";
+        }
+
+        todoelem.addEventListener("click" , (event)=>{
+            console.log(event.target);  // IN THIS WAY THAT CURRENT ELEMENT GOT SELECTED AND GOT PRINTED IN THE COSOLE WINDOW;
+        // now we want to delete that selected element;
+            let curr = event.target;
+            curr.remove();  // boom deleted ! 
+
+        });
+    </script>
+</body>
+</html>
