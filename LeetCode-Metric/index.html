@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leet-Metric</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+
+    <link rel="stylesheet" href="./style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Lekton:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Protest+Guerrilla&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Lekton:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Protest+Guerrilla&family=Silkscreen:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- for the icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+</head>
+<body>
+
+    <div class="container">
+        <!-- made the div to add irregular shape -->
+        <div class="irregular-shape">
+            <h1>Leet-Metric</h1>
+        </div>
+        
+
+        <div class="user-container">
+            <p>Enter Your LeetCode-Username Below:</p>
+            <div class="user-input-container">
+                <input type="text" placeholder="Please enter your username" id="user-input">
+                <!-- added the icon -->
+                <button id="search-btn"><span>Generate</span><span class="material-symbols-outlined">   
+                    query_stats
+                    </span></button>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <!-- populated by JS to show the username -->
+            <div class="name"></div>  
+
+            <div class="progress">
+
+                <div class="progress-item">
+                    <div class="easy-progress circle">
+                        <span id="easy-label"></span>
+                        Easy
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="medium-progress circle">
+                        <span id="medium-label"></span>
+                        Medium
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="hard-progress circle">
+                        <span id="hard-label"></span>
+                        Hard
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <!-- directly populate it from JS -->
+                <div class="card totalSolved"></div>
+                <div class="card ranking"></div>
+                <div class="card contribution"></div>
+                <div class="card reputation"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+</html>

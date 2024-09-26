@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* width: 100vw; */
+    height: 100vh;
+    /* padding: 2% 10%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(111, 111, 111);
+}
+
+.container{
+    width: 65%;
+    max-width: 1000px;
+    /* height: 80%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+
+    padding: 2rem;
+    row-gap: 1.7rem;
+
+    /* border: 2px solid black; */
+    border-radius: 15px;
+    background-color: rgb(245, 252, 142) ;
+}
+
+h1{
+    font-size: 3rem;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.user-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: .6rem;
+    font-family: "Lekton", monospace;
+  font-weight: 800;
+  font-style: normal;
+  
+    
+}
+
+.user-input-container{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    
+}
+
+#user-input{
+    width: 20rem;
+    min-width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-decoration: double;
+    cursor:text;
+}
+
+#search-btn{
+    width: 10rem;
+    padding: .1rem;
+    border-radius: 5px;
+    background-color: rgb(111, 111, 111);
+    color: white;
+    box-shadow: 0px 0px 5px rgb(111, 111, 111);
+    margin-top: 2%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Handjet", sans-serif;
+    font-size: x-large;
+
+}
+
+.circle{
+    border: 4px solid rgb(237, 160, 6);
+    border-radius: 50%;
+    width: 100px;
+    min-width: 100px;  /* Ensure minimum width to prevent shrinking */
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:medium;
+    font-weight: 700;
+    color: rgb(20, 19, 19);
+    flex-direction: column; /* Ensure contents stack vertically */
+    background: conic-gradient(rgb(237, 160, 6) var(--progress-degree, 0%),rgba(9, 198, 9, 0.464) 0%);
+
+    /* added transition */
+    transition: all 1s linear 0s;
+    /* modified the font */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+    cursor: pointer;
+}
+
+.circle:hover , #search-btn:hover {
+    transform: scale(1.1);
+    /* transform: rotate(10deg) rotate(-5deg); */
+    /* border: 4px solid rgba(9, 198, 9, 0.464); */
+    animation-iteration-count:1;
+    color: rgb(24, 6, 6);
+    background: conic-gradient(rgba(9, 198, 9, 0.464) var(--progress-degree, 0%),rgb(237, 160, 6) 0%);
+    /* added the animation of shaking */
+    animation: shake 0.5s;
+}
+
+/* the keyframes to shake the cicles */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.circle span{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.progress{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    display: none;
+}
+
+.name{
+    position: relative;
+    animation: movement 3s linear 0s infinite alternate none;
+    display: none;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    cursor: pointer;
+}
+
+@keyframes movement {
+    from{
+        top: 0%;
+        left: -30%;
+    }
+    to{
+        top: 0%;
+        left: 30%;
+    }
+}
+
+.stats-card{
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin: 3% 0%;
+}
+
+.card{
+    width: 170px;
+    height: 50px;
+    border: 2px solid #02832f;
+    background-color: #36d96f21;
+    color: #0a6f2e;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 2%;
+    margin: 1.5% 0.5%;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px #2cbb5d1f;
+    transition: all .7s ease-in-out 0s;
+
+    /* added the font to make ui better */
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 500;
+    font-size: smaller;
+}
+
+.card:hover{
+    transform: scale(1.08);
+    background-color: #2ed4680a;
+}
+
+/* for making the irregular shape of heading */
+.irregular-shape {
+    width: 300px;
+    height: 70px;
+    background-color: rgba(255, 132, 0, 0.859);
+    clip-path: polygon(
+      30% 10%, 20% 5%, 40% 10%, 60% 15%, 80% 20%, 
+      90% 40%, 90% 60%, 60% 80%, 50% 80%, 40% 85%, 
+      10% 60%, 10% 40%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    /* font-family: Arial, sans-serif; */
+  }
+  
+.irregular-shape h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+  
+
+/* adding media query to make it responsive */
+
+@media (max-width:550px) {
+    .container{
+        width: 87%;
+    }
+    .user-container{
+        width: 90%;
+        padding: 1% ;
+    }
+    .user-input-container{
+        width: 90%;
+        padding: .5% 1%;
+    }
+    #user-input{
+        width: 10rem;
+    }
+    
+    #search-btn{
+        width: 7rem;
+        margin-top: 1%;
+    }
+    .irregular-shape {
+        width: 250px;
+        height: 55px;
+    }
+    .irregular-shape h1 {
+        margin: 0;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width:250px) {
+    .container{
+        width: 95%;
+    }
+    .user-container{
+        width: 97%;
+        padding: .5% ;
+    }
+    .user-input-container{
+        width: 90%;
+        padding: .25% .5%;
+    }
+    #user-input{
+        width: 7rem;
+    }
+    
+    #search-btn{
+        width: 5rem;
+        margin-top: .5%;
+        font-size: small;
+    }
+    .irregular-shape {
+        width: 150px;
+        height: 40px;
+    }
+    .irregular-shape h1 {
+        margin: 0;
+        font-size: .8em;
+    }
+    
+}
+  
